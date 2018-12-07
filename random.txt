@@ -1,1 +1,9 @@
 spotify-this-song,"I Want it That Way"
+spotify-this-song,"Never Gonna Give You Up"
+spotify-this-song,"Don't Stop Me Now"
+movie-this,"The Matrix"
+movie-this,"Up"
+movie-this,"Bohemian Rhapsody"
+concert-this,Franz Ferdinand
+concert-this,Muse
+concert-this,Foreigner
