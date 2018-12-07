@@ -29,9 +29,17 @@ function music(term) {
     })
 }
 function movie(term) {
-    axios.get("http://www.omdbapi.com/?apikey=trilogy&s="+ term)
+    axios.get("http://www.omdbapi.com/?apikey=trilogy&t="+ term)
     .then(function(response){
-        console.log(response);
+        var data = response.data;
+        console.log();
+        console.log("Title: " + data.Title);
+        console.log("Year: " + data.Year);
+        console.log("IMDB Rating: " + data.Ratings[0].Value);
+        console.log("Rotten Tomatoes: " + data.Ratings[1].Value);
+        console.log("Country: " + data.Country);
+        console.log("Plot: " + data.Plot);
+        console.log("Actors: " + data.Actors);
     })
 }
 if (search === "do-what-it-says") {
