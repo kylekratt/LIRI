@@ -11,7 +11,10 @@ function concert(term) {
     var URL = "https://rest.bandsintown.com/artists/" + term + "/events?app_id=codingbootcamp"
     axios.get(URL)
         .then(function (response) {
+            var i=0;
             response.data.forEach(function (element) {
+                i++;
+                if (i>5) return;
                 console.log();
                 console.log(element.venue.name);
                 console.log(element.venue.country + "," + element.venue.city);
@@ -74,7 +77,7 @@ else if (search === "movie-this") {
 else if (search === "do-what-it-says") {
     fs.readFile("random.txt", 'utf8', (err, data) => {
         if (err) throw err
-        newData = data.split("\r\n");
+        newData = data.split(/\r?\n/g);
         var lineNum = Math.floor(Math.random() * newData.length);
         var newerData = newData[lineNum].split(",");
         search = newerData[0];
